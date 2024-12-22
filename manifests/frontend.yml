@@ -49,6 +49,12 @@ spec:
             value: "checkoutservice:5050"
           - name: AD_SERVICE_ADDR
             value: "adservice:9555"
+          - name: ENV_PLATFORM
+            value: "aws"
+          - name: ENABLE_PROFILER
+            value: "0"
+          - name: FRONTEND_MESSAGE
+            value: "DrInTech Has Successfully Deployed on EKS Cluster"
           resources:
             requests:
               cpu: 100m
