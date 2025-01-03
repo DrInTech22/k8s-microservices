@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: server
-        image: gcr.io/google-samples/microservices-demo/adservice:v0.2.3
+        image: maestrops/adservice:2-ae7ef5b
         ports:
         - containerPort: 9555
         env:
