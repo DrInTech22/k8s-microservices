@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: server
-        image: maestrops/adservice:9-df3ca9d
+        image: maestrops/adservice:10-666ecff
         ports:
         - containerPort: 9555
         env:
