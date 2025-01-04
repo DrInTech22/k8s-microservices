@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: server
-          image: gcr.io/google-samples/microservices-demo/frontend:v0.2.3
+          image: maestrops/cymbal-frontend:6-7df2473
           ports:
           - containerPort: 8080
           readinessProbe:
