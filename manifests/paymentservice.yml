@@ -20,11 +20,11 @@ spec:
         - name: PORT
           value: "50051"
         readinessProbe:
-          exec:
-            command: ["/bin/grpc_health_probe", "-addr=:50051"]
+          grpc:
+            port: 50051
         livenessProbe:
-          exec:
-            command: ["/bin/grpc_health_probe", "-addr=:50051"]
+          grpc:
+            port: 50051
         resources:
           requests:
             cpu: 100m
@@ -42,6 +42,6 @@ spec:
   selector:
     app: paymentservice
   ports:
-  - protocol: TCP
+  - name: grpc
     port: 50051
     targetPort: 50051

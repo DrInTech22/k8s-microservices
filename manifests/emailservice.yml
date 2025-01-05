@@ -25,12 +25,12 @@ spec:
           value: "1"  
         readinessProbe:
           periodSeconds: 5
-          exec:
-            command: ["/bin/grpc_health_probe", "-addr=:8080"]
+          grpc:
+            port: 8080
         livenessProbe:
           periodSeconds: 5
-          exec:
-            command: ["/bin/grpc_health_probe", "-addr=:8080"]
+          grpc:
+            port: 8080
         resources:
           requests:
             cpu: 100m
@@ -48,6 +48,6 @@ spec:
   selector:
     app: emailservice
   ports:
-  - protocol: TCP
+  - name: grpc
     port: 5000
     targetPort: 8080

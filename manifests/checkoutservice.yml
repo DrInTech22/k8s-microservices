@@ -17,11 +17,11 @@ spec:
           ports:
           - containerPort: 5050
           readinessProbe:
-            exec:
-              command: ["/bin/grpc_health_probe", "-addr=:5050"]
+            grpc:
+              port: 5050
           livenessProbe:
-            exec:
-              command: ["/bin/grpc_health_probe", "-addr=:5050"]
+            grpc:
+              port: 5050
           env:
           - name: PORT
             value: "5050"
@@ -54,6 +54,6 @@ spec:
   selector:
     app: checkoutservice
   ports:
-  - protocol: TCP
+  - name: grpc
     port: 5050
     targetPort: 5050
